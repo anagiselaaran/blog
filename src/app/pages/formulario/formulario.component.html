@@ -1,0 +1,35 @@
+<h2 class="text-center">Crea tu Post</h2>
+<div class="container">
+    <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+        <div class="mb-2">
+            <label for="" class="form-label">Titulo</label>
+            <input type="text"  class="form-control" formControlName="titulo">
+        </div>
+        <div class="mb-2">
+            <label for="" class="form-label">Texto</label>
+            <input type="text" class="form-control" formControlName="texto">
+        </div>
+        <div class="mb-2">
+            <label for="" class="form-label">Autor</label>
+            <input type="text" class="form-control" formControlName="autor">
+        </div>
+        <div class="mb-2">
+            <label for="" class="form-label">Imagen</label>
+            <input type="text" class="form-control" formControlName="imagen">
+        </div>
+        <div class="mb-2">
+            <label for="" class="form-label">Fecha</label>
+            <input type="date" class="form-control" formControlName="fecha">
+        </div>
+        <div class="mb-2">
+            <label for="" class="form-label">Categoria</label>
+           <select class="form-select" formControlName="categoria">
+            <option value="">Elige una opcion</option>
+            <option value="personal">Personal</option>
+            <option value="social">Social</option>
+            <option value="temalibre">Tema Libre</option>
+           </select>
+        </div>
+        <input type="submit" value="Enviar" class="btn btn-secondary d-flex mx-auto">
+    </form>
+</div>

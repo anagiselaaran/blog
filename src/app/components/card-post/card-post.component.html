@@ -1,0 +1,12 @@
+@if(post){
+<div class="card" style="width: 18rem;">
+    <img [src]="post.imagen" class="card-img-top" [alt]="post.titulo">
+    <div class="card-body">
+        <h5 class="card-title">{{post.titulo}}</h5>
+        <h6 class="card-title">{{post.autor}}</h6>
+        <p class="card-text">{{post.texto}}</p>
+        <p class="card-text">{{post.fecha}}</p>
+        <p class="card-text">{{post.categoria}}</p>
+    </div>
+</div>
+}
