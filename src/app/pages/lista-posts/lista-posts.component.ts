@@ -13,32 +13,42 @@ import { RouterLink } from '@angular/router';
 })
 export class ListaPostsComponent {
 
+
+  
   arrayPost:Post[]=[]
   postService = inject(PostService)
   arrPostViejos: Post[] = []
-  categoria:string=''
-
-
-  async ngOnInit() {
+  categoria: string = ''
+  
+  
+  
+  ngOnInit() {
     this.arrayPost = this.postService.getAll()
-     await JSON.parse(localStorage.getItem('arrayPost')!)
-    /* if (storedPost) {
-      this.arrPostViejos.push(storedPost)
-      //TODO se me guarda arriba DE LO Q YA HAY EN EL LOCAL
-      }
-      console.log(this.arrayPost);
-      this.arrPostViejos = this.postService.getAll() */
+    }
     
-  }
-
-   onChangeCategory($event: Event) {
-     const select = $event.target as HTMLSelectElement;
-     console.log(select.value);
-     this.categoria = select.value
-     console.log(this.categoria);
-     
-     
     
-  }
+    onChangeCategory($event: Event) {
+    const select = $event.target as HTMLSelectElement;
+    console.log(select.value);
+    if (select.value === 'todas') {
+      this.arrayPost = this.postService.getAll()
+    } else {
+      this.arrayPost = this.postService.getByCategoria(select.value)
+    }
+    }
 
-}
+
+  onClick() {
+    if (localStorage.getItem('arrayPost')) {
+      this.arrPostViejos.push(...JSON.parse(localStorage.getItem('arrayPost')!))
+      this.arrPostViejos = this.postService.getAll()
+    }
+  }
+  
+     
+  }
+    
+    
+
+
+

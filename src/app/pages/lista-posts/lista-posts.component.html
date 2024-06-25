@@ -1,7 +1,7 @@
 <h2 class="text-center">Post</h2>
-<div class="container-fluid m-5">
+<div class="container mx-auto m-5">
     <label for="" class="form-label">Elige una Categoria</label>
-    <select class="form-select" (input)="onChangeCategory($event)">
+    <select class="form-select" (change)="onChangeCategory($event)">
         <option value="todas">Elige una Opcion</option>
         <option value="personal">Personal</option>
         <option value="social">Social</option>
@@ -9,13 +9,17 @@
 
     </select>
 </div>
+<div class="container">
+    <button [routerLink]="['/new']" class="btn btn-secondary d-flex mx-auto mb-4">Crear Nuevo Post</button>
+    <button class="btn btn-secondary d-flex mx-auto" (click)="onClick()">Obtener Post Viejos</button>
+    
 
-<div class="row">
-
-    @for (post of arrayPost; track $index) {
-        <div class="col-12 p-0 col-sm-6 p-sm-3 col-md-4 p-md-3">
-            <card-post [post]="post"></card-post>
-        </div>
-    }
+    <div class="row ">
+    
+        @for (post of arrayPost; track $index) {
+            <div class="col-12 p-0 col-sm-6 p-sm-3 col-md-4 p-md-3">
+                <card-post [post]="post"></card-post>
+            </div>
+        }
+    </div>
 </div>
-<button [routerLink]="['/new']" class="btn btn-secondary d-flex mx-auto mb-4">Crear nuevo Post</button>

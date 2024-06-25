@@ -31,8 +31,6 @@ export class FormularioComponent {
   async onSubmit() {
    
     this.postService.create(this.postForm.value)
-    //TODO: SE ME GUARDA ARRIVA
-    /* localStorage.setItem('newPost', JSON.stringify(this.postForm.value)) */
     await Swal.fire('Post Creado', 'Creacion Exitosa', 'success')
     this.router.navigateByUrl('/posts')
   }
