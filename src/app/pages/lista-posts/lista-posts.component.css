@@ -1,0 +1,12 @@
+
+button {
+    background-color: #FFA27F;
+    color: #5C2FC2;
+    border: none;
+
+    &:hover {
+
+        background-color: #FFE8C5;
+        color: #006769;
+    }
+}

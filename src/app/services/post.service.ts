@@ -16,7 +16,17 @@ export class PostService {
     
   }
   getAll(): Post[]{
+    
     return this.arrayPost
+    }
+    
+    getOldPosts(): Post[]{
+    let data = localStorage.getItem('arrayPost')
+    if (data !== null) {
+      this.arrayPost.push(...JSON.parse(data))
+    }
+      return this.arrayPost
+  
   }
   /* getAllPosts(){
     const old = localStorage.getItem('arrayPost')

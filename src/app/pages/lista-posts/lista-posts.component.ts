@@ -17,7 +17,6 @@ export class ListaPostsComponent {
   
   arrayPost:Post[]=[]
   postService = inject(PostService)
-  arrPostViejos: Post[] = []
   categoria: string = ''
   
   
@@ -39,10 +38,8 @@ export class ListaPostsComponent {
 
 
   onClick() {
-    if (localStorage.getItem('arrayPost')) {
-      this.arrPostViejos.push(...JSON.parse(localStorage.getItem('arrayPost')!))
-      this.arrPostViejos = this.postService.getAll()
-    }
+      this.arrayPost = this.postService.getOldPosts()
+    
   }
   
      
