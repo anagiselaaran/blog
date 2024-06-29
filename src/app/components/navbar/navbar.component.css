@@ -1,3 +1,14 @@
 .navbar{
     background-color: #B3C8CF ;
 }
+figure{
+    width: 300px;
+    margin: 20px auto;
+}
+img{
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+    border: 2px solid #22668D;
+}

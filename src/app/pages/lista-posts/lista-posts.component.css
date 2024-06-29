@@ -10,3 +10,13 @@ button {
         color: #006769;
     }
 }
+.old_posts{
+    width: 500px;
+    margin: 10px auto;
+    border: 1px solid #006769;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    border-radius: 20px;
+
+}
