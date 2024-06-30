@@ -8,3 +8,17 @@ input[type=submit]{
         color: #006769;
     }
 }
+h4{
+    border-bottom: 1px solid #006769;
+    padding: 10px;
+    width: 170px;
+    margin-left: 10px;
+}
+select{
+    background-color: #FFA27F;
+    color: #5C2FC2;
+    margin-bottom: 30px;
+}
+input[type=text],input[type=date]{
+    background-color: #FFA27F;
+}

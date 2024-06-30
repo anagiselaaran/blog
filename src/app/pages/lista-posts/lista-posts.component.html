@@ -10,22 +10,21 @@
     </select>
 </div>
 <div class="container ">
-    <div class="old_posts">
+    <div class="new_posts">
         <h4>Crea Nuevo Post...</h4>
         <button [routerLink]="['/new']" class="btn btn-secondary d-flex mx-auto mb-4">Crear Nuevo Post</button>
+        
     </div>
     <div class="old_posts">
         <h4>Mira los Ultimos Posts...</h4>
-        
         <button class="btn btn-secondary d-flex mx-auto mb-5" (click)="onClick()">Obtener Post Viejos</button>
     </div>
    
     <div class="row">
-
         @for (post of arrayPost; track $index) {
             <div class="col-12 mb-2 col-sm-6 mb-sm-5 col-lg-4 mb-lg-2">
                  <card-post [post]="post"></card-post>
             </div>
-                }
+        }
     </div>
 </div>

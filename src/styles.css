@@ -1,4 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 body {
     background-color: #FFF9D0;
+    width: 1200px;
+    margin: 0 auto;
+    box-shadow: 5px 10px 5px  black ;
 }
+
+
