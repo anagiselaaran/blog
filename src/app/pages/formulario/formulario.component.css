@@ -22,3 +22,15 @@ select{
 input[type=text],input[type=date]{
     background-color: #FFA27F;
 }
+input.ng-touched.ng-invalid, select.ng-touched.ng-invalid{
+    border: 1px solid red;
+}
+input.ng-valid, select.ng-valid{
+    border: 1px solid green;
+}
+.error{
+    font-size: 14px;
+    color: red;
+    border-bottom: 1px solid red;
+    display: inline-block;
+}

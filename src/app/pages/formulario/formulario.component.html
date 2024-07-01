@@ -5,22 +5,37 @@
         <div class="mb-2">
             <label for="" class="form-label">Titulo</label>
             <input type="text"  class="form-control" formControlName="titulo">
+            @if(checkError('titulo','required')){
+            <p class="error">El campo titulo es requerido</p>
+            }
         </div>
         <div class="mb-2">
             <label for="" class="form-label">Texto</label>
             <input type="text" class="form-control" formControlName="texto">
+            @if(checkError('texto','required')){
+            <p class="error">El campo texto es requerido</p>
+            }
         </div>
         <div class="mb-2">
             <label for="" class="form-label">Autor</label>
             <input type="text" class="form-control" formControlName="autor">
+            @if(checkError('autor','required')){
+            <p class="error">El campo autor es requerido</p>
+            }
         </div>
         <div class="mb-2">
             <label for="" class="form-label">Imagen</label>
             <input type="text" class="form-control" formControlName="imagen">
+            @if(checkError('imagen','required')){
+            <p class="error">El campo imagen es requerido</p>
+            }
         </div>
         <div class="mb-2">
             <label for="" class="form-label">Fecha</label>
             <input type="date" class="form-control" formControlName="fecha">
+            @if(checkError('fecha','required')){
+            <p class="error">El campo fecha es requerido</p>
+            }
         </div>
         <div class="mb-2">
             <label for="" class="form-label">Categoria</label>
@@ -30,7 +45,15 @@
             <option value="social">Social</option>
             <option value="temalibre">Tema Libre</option>
            </select>
+            @if(checkError('categoria','required')){
+            <p class="error">El campo categoria es requerido</p>
+            }
         </div>
-        <input type="submit" value="Enviar" class="btn btn-secondary d-flex mx-auto">
+        <input type="submit" value="Enviar" class="btn btn-secondary d-flex mx-auto" [disabled]="!postForm.valid">
+        @if(postForm.invalid){
+        <p>Revisa los errores del formulario para poder enviarlo</p>
+        }@else {
+        <p>El formulario es correcto. Puedes enviarlo</p>
+        }
     </form>
 </div>
