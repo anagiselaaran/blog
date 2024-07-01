@@ -20,10 +20,9 @@ export class ListaPostsComponent {
   categoria: string = ''
   
   
-  
   ngOnInit() {
     this.arrayPost = this.postService.getAll()
-    }
+  }
     
     
     onChangeCategory($event: Event) {
@@ -38,6 +37,7 @@ export class ListaPostsComponent {
 
 
   onClick() {
+   
       this.arrayPost = this.postService.getOldPosts()
     
   }

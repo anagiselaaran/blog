@@ -10,17 +10,15 @@ export class PostService {
   
   create(newPost:Post) {
     this.arrayPost.push(newPost)
-    /* guardo el array en el localstorage */
     localStorage.setItem('arrayPost', JSON.stringify(this.arrayPost))
     console.log(localStorage.getItem('arrayPost'));
     
   }
   getAll(): Post[]{
-    
     return this.arrayPost
     }
     
-    getOldPosts(): Post[]{
+  getOldPosts(): Post[]{
     let data = localStorage.getItem('arrayPost')
     if (data !== null) {
       this.arrayPost.push(...JSON.parse(data))
@@ -28,9 +26,7 @@ export class PostService {
       return this.arrayPost
   
   }
-  /* getAllPosts(){
-    const old = localStorage.getItem('arrayPost')
-  } */
+
   getByCategoria(cat: string): Post[]{
     return this.arrayPost.filter(post => post.categoria === cat)
   }

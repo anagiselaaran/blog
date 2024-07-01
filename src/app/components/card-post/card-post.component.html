@@ -1,12 +1,12 @@
 @if(post){
 <div class="card" >
     <img [src]="post.imagen" class="card-img-top" [alt]="post.titulo">
+    <p class="card-text">Fecha: {{post.fecha}}</p>
     <div class="card-body">
-        <h5 class="card-title">{{post.titulo}}</h5>
-        <h6 class="card-title">{{post.autor}}</h6>
+        <h5 class="card-title">Titulo: {{post.titulo}}</h5>
+        <h6 class="card-title">Autor: {{post.autor}}</h6>
         <p class="card-text">{{post.texto}}</p>
-        <p class="card-text">{{post.fecha}}</p>
-        <p class="card-text">{{post.categoria}}</p>
+        <p class="card-text">Categoria: {{post.categoria}}</p>
     </div>
 </div>
 }
